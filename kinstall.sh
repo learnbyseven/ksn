@@ -50,9 +50,7 @@ sleep 2
 systemctl start crio.service && systemctl enable crio.service
 sleep 3
 kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-bind-port=6443 
-sleep 20
-kubectl get nodes
-sleep 2
+sleep 3
 mkdir -p $HOME/.kube && sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
 sleep 2
 kubectl get nodes
